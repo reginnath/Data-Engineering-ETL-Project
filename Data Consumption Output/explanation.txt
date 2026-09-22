@@ -1,0 +1,17 @@
+We chose to prepare a machine learning dataset as an output of this ETL process. Up to this point, the dataset has already undergone transformation & validation, and has been modeled into a star schema. Although the data is now cleaned, standardized, and connected through a foreign key, which makes it easy to be used as an input to train a machine learning model, we still need to perform additional steps such as joining tables, encoding, and so on. To make sure that this dataset is fully optimized for a regression model with the details of:
+- Target column: sale_amount_final or cost_final.
+- Features: numerical (leads_final, etc), categorical (Device, Keyword), temporal (month_num, etc).
+- Regression model: Linear Regression, Random Forest Regressor, etc.
+- Evaluator(s): MAE, MSE, R2.
+- Storage: stored in MySQL database.
+
+We made an additional transformation file, which will perform these steps:
+- Joining tables → create a flattened dataset by joining the fact and dimensions table (denormalizing) with Stream lookup.
+- Drop columns → dropping the irrelevant column such as IDs (fact_id, Ad_ID, campaign_id, etc), and redundant columns (Campaign_Name, Location, day_name, month_name, date_clean).
+- Feature engineering → adding a new calculated column called profit (2) and CTR (3) to enrich predictive features.
+- Encoding → do a one-hot encoding to Device, and binary encoding to is_weekend. Encoding Keyword is deferred to more advanced techniques, such as word embeddings in Python.
+- Output → the dataset will be stored in the MySQL database with the Table output step.
+	profit = sale amount final - cost final	(2)
+	CTR = clicks finalimpressions final	(3)
+
+Lastly, put this transformation file in the job file as a part of the ETL pipeline, complete with its own Write to log step, which then will be connected to the Write to file step to log the error that may occur during execution.
