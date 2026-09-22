@@ -32,10 +32,10 @@ An ETL project using Pentaho to transform, validate, model, and prepare data for
 
 ## 5. Data Consumption Stage (load to MySQL via XAMPP)
 - Create a new MySQL database named ml_ready_dataset.
-- Make sure the Pentaho database connection named connectionOLAP is configured to connect to this database:
-   - Host: localhost
-   - Port: 3306
-   - User: root
+- Make sure the Pentaho database connection named `connectionOLAP` is configured to connect to this database:
+   - Host: `localhost`
+   - Port: `3306`
+   - User: `root`
    - Password: empty or according to the local configuration
-   - Database: ml_ready_dataset
+   - Database: `ml_ready_dataset`
 - Run the Pentaho job. The `regression_dataset` table will be automatically created and populated with the processed data.
