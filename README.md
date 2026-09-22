@@ -7,7 +7,7 @@ An ETL project using Pentaho to transform, validate, model, and prepare data for
 - Pentaho transformations (`.ktr`) and jobs (`.kjb`) use absolute file paths (e.g., `C:\Users\...`). If the project is run on another computer, these paths must be updated accordingly.
 
 ## 2. How to Run
-- Download the project input file, `GoogleAds_DataAnalytics_Sales_Uncleaned_pentaho.csv, from the Google Drive link provided in the Expected Output section below.
+- Download the project input file, `GoogleAds_DataAnalytics_Sales_Uncleaned_pentaho.csv`, from the Google Drive link provided in the Expected Output section below.
 - Place the downloaded CSV file inside the /raw_data folder.
 - Make sure the following folder structure is available on your computer:
 ```text
