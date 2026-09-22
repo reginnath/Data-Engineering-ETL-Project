@@ -7,7 +7,7 @@ An ETL project using Pentaho to transform, validate, model, and prepare data for
 - Pentaho transformations (`.ktr`) and jobs (`.kjb`) use absolute file paths (e.g., `C:\Users\...`). If the project is run on another computer, these paths must be updated accordingly.
 
 ## 2. How to Run
-- Download the project input file, GoogleAds_DataAnalytics_Sales_Uncleaned_pentaho.csv, from the Google Drive link provided in the Expected Output section below.
+- Download the project input file, `GoogleAds_DataAnalytics_Sales_Uncleaned_pentaho.csv, from the Google Drive link provided in the Expected Output section below.
 - Place the downloaded CSV file inside the /raw_data folder.
 - Make sure the following folder structure is available on your computer:
 ```text
@@ -19,7 +19,7 @@ An ETL project using Pentaho to transform, validate, model, and prepare data for
 └── consumption_data
 ```
 - Run the Pentaho job. The pipeline will automatically generate the required outputs, including transformed data, star schema tables, log files, and the consumption dataset.
-Note: Only the `/raw_data` folder needs to contain an input file. The other folders will be populated automatically when the Pentaho pipeline is executed.
+- Note: Only the `/raw_data` folder needs to contain an input file. The other folders will be populated automatically when the Pentaho pipeline is executed.
 
 ## 3. Expected Output
 - The Google Drive folder contains the input CSV file, example outputs from a completed pipeline run, including transformed CSV files, star schema tables, log files, and the ML-ready dataset.
@@ -38,4 +38,4 @@ Note: Only the `/raw_data` folder needs to contain an input file. The other fold
    - User: root
    - Password: empty or according to the local configuration
    - Database: ml_ready_dataset
-- Run the Pentaho job. The regression_dataset table will be automatically created and populated with the processed data.
+- Run the Pentaho job. The `regression_dataset` table will be automatically created and populated with the processed data.
