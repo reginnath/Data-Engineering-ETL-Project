@@ -33,9 +33,9 @@ Note: Only the `/raw_data` folder needs to contain an input file. The other fold
 ## 5. Data Consumption Stage (load to MySQL via XAMPP)
 - Create a new MySQL database named ml_ready_dataset.
 - Make sure the Pentaho database connection named connectionOLAP is configured to connect to this database:
-Host: localhost
-Port: 3306
-User: root
-Password: empty or according to the local configuration
-Database: ml_ready_dataset
+   - Host: localhost
+   - Port: 3306
+   - User: root
+   - Password: empty or according to the local configuration
+   - Database: ml_ready_dataset
 - Run the Pentaho job. The regression_dataset table will be automatically created and populated with the processed data.
